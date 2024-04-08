@@ -5,15 +5,14 @@ import React from 'react';
 import './App.css';
 import Mycomponent from './components/Mycomponent';
 
-const App = () => {
-   return (
-      <div>
+class App extends React.Component {
+   render() {
+      return (
          <>
-            <h1> Hello World</h1>
             <Mycomponent />
          </>
-      </div>
-   );
-};
+      );
+   }
+}
 
 export default App;
