@@ -8,13 +8,13 @@ class DisplayMyInfo extends React.Component {
    handleOnShowHide = () => {
       this.setState({ isShowListUser: !this.state.isShowListUser });
    };
+
    render() {
       const { users } = this.props;
       // console.log(users);
-      console.table(users);
       return (
          <div>
-            <h1>My Info</h1>
+            <h1>My List User</h1>
             <div>
                <span onClick={() => this.handleOnShowHide()}>
                   {this.state.isShowListUser === true
@@ -22,23 +22,22 @@ class DisplayMyInfo extends React.Component {
                      : 'Show List User'}
                </span>
             </div>
-            <div>
-               {users.map((user) => {
-                  return (
-                     <div>
-                        {this.state.isShowListUser && (
-                           <div
-                              key={user.id}
-                              className={+user.age > 18 ? 'green' : 'red'}
-                           >
-                              <h3>My name is {user.name}</h3>
-                              <h3>I am {user.age}</h3>
-                           </div>
-                        )}
-                     </div>
-                  );
-               })}
-            </div>
+            {this.state.isShowListUser && (
+               <div>
+                  {users.map((user) => {
+                     return (
+                        <div
+                           key={user.id}
+                           className={+user.age > 18 ? 'green' : 'red'}
+                        >
+                           <h3>My name is {user.name}</h3>
+                           <h3>I am {user.age}</h3>
+                           <hr></hr>
+                        </div>
+                     );
+                  })}
+               </div>
+            )}
          </div>
       );
    }
