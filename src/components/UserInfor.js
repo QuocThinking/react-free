@@ -4,22 +4,9 @@ import React from 'react';
 
 class UserInfor extends React.Component {
    state = {
-      name: 'Henry',
-      age: 18,
-      address: 'TG'
-   };
-   handleOnMouseEnter(event) {
-      console.log(event.pageX);
-   }
-   handleOnchangeName = (event) => {
-      this.setState({ name: event.target.value });
-   };
-   handleOnChangeAge = (event) => {
-      this.setState({ age: event.target.value });
-   };
-   handleOnSubmit = (event) => {
-      event.preventDefault();
-      console.log(this.state);
+      name: 'Quoc',
+      age: 30,
+      address: 'HCM'
    };
    render() {
       return (
